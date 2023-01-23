@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/base.css') }}">
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+    {{mymap.js}}
+    <title>CareFull</title>
+</head>
+<body>
+
+  <!-- Google Map Frame -->
+  <iframe
+    id="framed-map"
+    width="100vw"
+    height="100vh"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGkzF9CQuX540YmPxCMSiMJlPEIsB9_hM&q=Western+University,London+Ontario">
+  </iframe>
+
+  {{mymap.html}}
+  <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDEblVKCIhkLHPxriPcFrvIhS5qv4G0rLA&map_ids=(None,)&language=en&region=US&callback=initialize_map" type="text/javascript"></script> -->
+
+  <!-- Recommendations based on user status -->
+  <div class="ui-locs">
+    <h3>Recommendations</h3>
+      {% for e in listOfRec %}
+        {{e}} <br>
+      {% endfor %}
+  </div>
+
+  <div class="ui-display">
+    <!-- Titles of side bar -->
+    <h3>Welcome to CareFull!</h3>
+    <h4>Please enter your information.</h4>
+    <form id="login-man-form">
+      <input id="name" type="text" name="name" placeholder="Enter Full Name"><br>
+      <input id="location" type="text" name="location" placeholder="Enter Location"><br>
+      <!-- <input id="long" type="text" name="long" placeholder="Enter Longitude"><br>
+      <input id="lat" type="text" name="lat" placeholder="Enter Latitude"><br> -->
+      <input id="age" type="text" name="age" placeholder="Enter Age"><br>
+      <input id="sex" type="text" name="sex" placeholder="Enter Sex"><br>
+
+      <!-- Checkboxes for symptoms & Underlying Conditions -->
+      <h5>Symptoms</h5>
+      <input id="s_mp" type="checkbox" checked value="Mild Pain">
+      <label for="s_mp">Mild Pain</label><br>
+      <input id="s_sp" type="checkbox" value="Severe Pain">
+      <label for="s_sp">Severe Pain</label><br>
+      <input id="s_dr" type="checkbox" value="Diarrhea">
+      <label for="s_dr">Diarrhea</label><br>
+      <input id="s_vo" type="checkbox" value="Vomiting">
+      <label for="s_vo">Vomiting</label><br>
+      <input id="s_ob" type="checkbox" value="Open bleeding">
+      <label for="s_ob">Open bleeding</label><br>
+      <input id="s_cr" type="checkbox" value="Cramping">
+      <label for="s_cr">Cramping</label><br>
+      <input id="s_mf" type="checkbox" checked value="Mild fever">
+      <label for="s_mf">Mild fever</label><br>
+      <input id="s_hf" type="checkbox" value="High fever">
+      <label for="s_hf">High fever</label><br>
+      <input id="s_fg" type="checkbox" checked value="Fatigue">
+      <label for="s_fg">Fatigue</label><br>
+      <input id="s_nb" type="checkbox" value="Nose Bleeds">
+      <label for="s_nb">Nose Bleeds</label><br>
+      <input id="s_wl" type="checkbox" value="Weight Loss">
+      <label for="s_wl">Weight Loss</label><br>
+      <input id="s_sb" type="checkbox" value="Short of Breath">
+      <label for="s_sb">Short of Breath</label><br>
+      <input id="s_uc" type="checkbox" value="Unconcious">
+      <label for="s_uc">Unconcious</label><br>
+      <input id="s_co" type="checkbox" checked value="Cough">
+      <label for="s_co">Cough</label><br>
+      <input id="s_cp" type="checkbox" value="Chest Pain">
+      <label for="s_cp">Chest Pain</label><br>
+      <input id="s_lt" type="checkbox" value="Lack of Taste">
+      <label for="s_lt">Lack of Taste</label><br>
+      <input id="s_cu" type="checkbox" value="Confusion">
+      <label for="s_cu">Confusion</label><br>
+      <input id="s_la" type="checkbox" value="Loss of Appetite">
+      <label for="s_la">Loss of Appetite</label><br>
+      <h5>Underlying Conditions</h5>
+      <input id="s_cad" type="checkbox" value="CAD">
+      <label for="s_cad">CAD</label><br>
+      <input id="s_at" type="checkbox" value="Arthritis">
+      <label for="s_at">Arthritis</label><br>
+      <input id="s_wi" type="checkbox" checked value="Weakened Immune System">
+      <label for="s_wi">Weakened Immune System</label><br>
+      <input id="s_lk" type="checkbox" value="Leukemia">
+      <label for="s_lk">Leukemia</label><br>
+      <input id="s_aa" type="checkbox" value="Asthma">
+      <label for="s_aa">Asthma</label><br>
+      <input id="s_lag" type="checkbox" value="Light Allergies">
+      <label for="s_lag">Light Allergies</label><br>
+      <input id="s_sag" type="checkbox" value="Severe Allergies">
+      <label for="s_sag">Severe Allergies</label><br>
+
+      <button type="button" onclick="submitData(this)">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

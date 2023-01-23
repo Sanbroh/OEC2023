@@ -1,0 +1,154 @@
+body {
+  background-color: #D68162;
+  color: #4B553A;
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.ui-locs {
+  background-color: #EFE9DB;
+  z-index: 100;
+  position: fixed;
+  top: 24px;
+  right: 364px;
+  border-radius: 16px;
+
+  padding-left: 12px;
+  padding-right: 12px;
+
+  min-width: 100px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.ui-locs h3 {
+  font-size: 14px;
+  padding: 12px;
+}
+
+/* #map {
+  height: 1000px;
+  width: 1000px;
+} */
+
+.ui-display {
+  background-color: #EFE9DB;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  min-height: 100%;
+
+  padding-top: 36px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-bottom: 48px;
+
+  border-left: solid;
+  border-left-width: 8px;
+  border-left-color: #DBA686;
+}
+
+.ui-display h3 {
+  font-size: 18px;
+}
+
+.ui-display h4 {
+  font-size: 14px;
+}
+
+.ui-display input {
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  font-size: 14px;
+
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.ui-display button {
+  background-color: #26abff;
+  border-color: #26abff;
+  border-style: solid;
+  border-radius: 16px;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.ui-display button:hover {
+  color: #26abff;
+  background-color: white;
+
+  transition: 0.5s;
+}
+
+.center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fixed {
+    position: fixed;
+}
+
+.pointer {
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.pointer:hover {
+    color: #26abff;
+
+    transition: 0.5s;
+}
+
+.center-horz {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ededed;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
